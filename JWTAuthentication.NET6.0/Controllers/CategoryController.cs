@@ -1,5 +1,6 @@
 ﻿using JWTAuthentication.NET6._0.Models.Models;
 using JWTAuthentication.NET6._0.Services.Contracts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,14 +24,15 @@ namespace JWTAuthentication.NET6._0.Controllers
         }
 
         [HttpGet("{categoryId}")]
-        public ActionResult GetCategoryById([FromRoute] int categoryId)
+        public IActionResult GetCategoryById([FromRoute] int categoryId)
         {
             CategoryDTO? category = _categoryService.GetCategoryById(categoryId);
             return category != null ? Ok(category) : NotFound();
         }
 
         [HttpPost]
-        public ActionResult AddCategory([FromBody] CategoryModel categoryModel)
+
+        public IActionResult AddCategory([FromBody] CategoryModel categoryModel)
         {
            if(!ModelState.IsValid)
             {
@@ -73,6 +75,13 @@ namespace JWTAuthentication.NET6._0.Controllers
                 return Ok("Category Delete Successfully!!!");
             }
             return NotFound("Category Not Found!!!");
+        }
+
+        [HttpGet("{categoryId}/products")]
+        public IActionResult GetAllProductByCategoryId(int categoryId)
+        {
+            List<ProductDTO> products = _categoryService.GetAllProductByCategoryId(categoryId);
+            return Ok(products);
         }
     }
 }

@@ -8,7 +8,9 @@ namespace JWTAuthentication.NET6._0.Mappers
         public CategoryEntity MapToCategory(CategoryModel categoryModel)
         {
             CategoryEntity categoryEntity = new CategoryEntity();
-            categoryEntity.CategoryId = categoryModel.CategoryId;
+            if (categoryModel.CategoryId != null)
+                categoryEntity.CategoryId = (int)categoryModel.CategoryId;
+            
             categoryEntity.CategoryName = categoryModel.CategoryName;
             categoryEntity.CategoryDescription = categoryModel.CategoryDescription;
             return categoryEntity;

@@ -8,7 +8,8 @@ namespace JWTAuthentication.NET6._0.Mappers
         public ProductEntity MapToProduct(ProductModel productModel)
         {
             ProductEntity produtEntity = new ProductEntity();
-            produtEntity.ProductId = productModel.ProductId;
+            if(productModel.ProductId != null)
+                produtEntity.ProductId = (int)productModel.ProductId;
             produtEntity.ProductName = productModel.ProductName;
             produtEntity.ProductDescription = productModel.ProductDescription;
             produtEntity.ProductPrice = productModel.ProductPrice;

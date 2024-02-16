@@ -10,6 +10,7 @@ namespace JWTAuthentication.NET6._0.Repositories.Contracts
         public CategoryEntity AddCategory(CategoryEntity category);
         public bool UpdateCategory(CategoryEntity category);
         public void DeleteCategory(CategoryEntity category);
+        public List<ProductEntity> GetAllProductByCategoryId(int id);
 
     }
 }

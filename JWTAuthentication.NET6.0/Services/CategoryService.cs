@@ -9,10 +9,12 @@ namespace JWTAuthentication.NET6._0.Services
     {
         private readonly ICategoryMapper _categoryMapper;
         private readonly ICategoryRepository _categoryRepository;
-        public CategoryService(ICategoryMapper categoryMapper, ICategoryRepository categoryRepository)
+        private readonly IProductMapper _productMapper;
+        public CategoryService(ICategoryMapper categoryMapper, ICategoryRepository categoryRepository, IProductMapper productMapper)
         {
             _categoryMapper = categoryMapper;
             _categoryRepository = categoryRepository;
+            _productMapper = productMapper;
         }
 
         public CategoryDTO AddCategory(CategoryModel categoryModel)
@@ -59,6 +61,12 @@ namespace JWTAuthentication.NET6._0.Services
         public void SaveChanges()
         {
             _categoryRepository.SaveChanges();
+        }
+
+        public List<ProductDTO> GetAllProductByCategoryId(int categoryId)
+        {
+            List<ProductEntity> products = _categoryRepository.GetAllProductByCategoryId(categoryId);
+            return products.Select(p => _productMapper.MapToProductDTO(p)).ToList();
         }
     }
 }

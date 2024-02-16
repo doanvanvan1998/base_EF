@@ -10,5 +10,6 @@ namespace JWTAuthentication.NET6._0.Services.Contracts
         public bool UpdateCategory(int categoryId, CategoryModel categoryModel);
         public bool DeleteCategory(int categoryId);
         public void SaveChanges();
+        public List<ProductDTO> GetAllProductByCategoryId(int categoryId);
     }
 }

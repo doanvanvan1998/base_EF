@@ -49,5 +49,10 @@ namespace JWTAuthentication.NET6._0.Repositories
         {
             _dataDB.categories.Remove(category);
         }
+
+        public List<ProductEntity> GetAllProductByCategoryId(int id)
+        {
+            return _dataDB.products.Where(p => p.CategoryId == id).ToList();
+        }
     }
 }

@@ -1,4 +1,10 @@
 using JWTAuthentication.NET6._0.Auth;
+using JWTAuthentication.NET6._0.Mappers;
+using JWTAuthentication.NET6._0.Mappers.Contracts;
+using JWTAuthentication.NET6._0.Repositories;
+using JWTAuthentication.NET6._0.Repositories.Contracts;
+using JWTAuthentication.NET6._0.Services;
+using JWTAuthentication.NET6._0.Services.Contracts;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +23,17 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
+//for services
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
+//for mappers
+builder.Services.AddScoped<ICategoryMapper, CategoryMapper>();
+builder.Services.AddScoped<IProductMapper, ProductMapper>();
+
+//for repositories
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 // Adding Authentication
 builder.Services.AddAuthentication(options =>
