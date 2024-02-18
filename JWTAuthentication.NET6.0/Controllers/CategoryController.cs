@@ -1,4 +1,5 @@
-﻿using JWTAuthentication.NET6._0.Models.Models;
+﻿using JWTAuthentication.NET6._0.Models.DTO;
+using JWTAuthentication.NET6._0.Models.Models;
 using JWTAuthentication.NET6._0.Services.Contracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -31,7 +32,6 @@ namespace JWTAuthentication.NET6._0.Controllers
         }
 
         [HttpPost]
-
         public IActionResult AddCategory([FromBody] CategoryModel categoryModel)
         {
            if(!ModelState.IsValid)

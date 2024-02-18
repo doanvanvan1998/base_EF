@@ -1,4 +1,5 @@
 ﻿using JWTAuthentication.NET6._0.Mappers.Contracts;
+using JWTAuthentication.NET6._0.Models.DTO;
 using JWTAuthentication.NET6._0.Models.Models;
 using JWTAuthentication.NET6._0.Repositories.Contracts;
 using JWTAuthentication.NET6._0.Services.Contracts;
@@ -33,6 +34,11 @@ namespace JWTAuthentication.NET6._0.Services
                 _productRepository.SaveChanges();
                 return true;
             }
+        }
+
+        public PageResult<ProductDTO> GetAllPage(GetProductPagingRequest request)
+        {
+            return _productRepository.GetAllPage(request);
         }
 
         public ProductDTO? GetProductById(int productId)

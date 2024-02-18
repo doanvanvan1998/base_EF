@@ -1,4 +1,5 @@
-﻿using JWTAuthentication.NET6._0.Models.Models;
+﻿using JWTAuthentication.NET6._0.Models.DTO;
+using JWTAuthentication.NET6._0.Models.Models;
 using JWTAuthentication.NET6._0.Services.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,7 +29,7 @@ namespace JWTAuthentication.NET6._0.Controllers
             return product != null ? Ok(product) : NotFound();
         }
 
-        [HttpPost]
+        [HttpPost("addProduct")]
         public IActionResult AddProduct([FromBody] ProductModel productModel)
         {
             if (!ModelState.IsValid)
@@ -67,6 +68,13 @@ namespace JWTAuthentication.NET6._0.Controllers
                 return Ok("delete product success !");
             else
                 return new ObjectResult("delete product failed !") { StatusCode = StatusCodes.Status500InternalServerError };
+        }
+
+        [HttpPost("getAllPage")]
+        public IActionResult GetAllPage([FromBody] GetProductPagingRequest request)
+        {
+            PageResult<ProductDTO> pageResult = _productService.GetAllPage(request);
+            return Ok(pageResult);
         }
     }
 }
