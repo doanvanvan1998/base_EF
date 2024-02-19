@@ -11,8 +11,8 @@ namespace JWTAuthentication.NET6._0.Auth
         {
         }
 
-        public DbSet<CategoryEntity> categories { get; set; }
-        public DbSet<ProductEntity> products { get; set; }
+        public DbSet<CategoryEntity> Categories { get; set; }
+        public DbSet<ProductEntity> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

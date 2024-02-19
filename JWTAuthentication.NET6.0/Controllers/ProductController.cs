@@ -70,8 +70,8 @@ namespace JWTAuthentication.NET6._0.Controllers
                 return new ObjectResult("delete product failed !") { StatusCode = StatusCodes.Status500InternalServerError };
         }
 
-        [HttpPost("getAllPage")]
-        public IActionResult GetAllPage([FromBody] GetProductPagingRequest request)
+        [HttpGet("getAllPage")]
+        public IActionResult GetAllPage([FromQuery] GetProductPagingRequest request)
         {
             PageResult<ProductDTO> pageResult = _productService.GetAllPage(request);
             return Ok(pageResult);

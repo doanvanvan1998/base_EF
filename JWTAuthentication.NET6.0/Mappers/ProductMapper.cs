@@ -25,7 +25,6 @@ namespace JWTAuthentication.NET6._0.Mappers
             productDTO.ProductDescription = productEntity.ProductDescription;
             productDTO.ProductPrice = productEntity.ProductPrice;
             productDTO.CategoryId = productEntity.CategoryId;
-            productDTO.CategoryName = productEntity.CategoryEntity.CategoryName;
             return productDTO;
         }
     }

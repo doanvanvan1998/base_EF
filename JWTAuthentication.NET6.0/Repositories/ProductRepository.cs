@@ -19,17 +19,17 @@ namespace JWTAuthentication.NET6._0.Repositories
         }
         public ProductEntity? AddProduct(ProductEntity product)
         {
-            CategoryEntity? categoryEntity = _context.categories.FirstOrDefault(c => c.CategoryId == product.CategoryId);
+            CategoryEntity? categoryEntity = _context.Categories.FirstOrDefault(c => c.CategoryId == product.CategoryId);
             if (categoryEntity == null)
                 throw new Exception("Category not found with id: " + product.CategoryId);
-            EntityEntry<ProductEntity> entityEntry = _context.products.Add(product);
+            EntityEntry<ProductEntity> entityEntry = _context.Products.Add(product);
             return entityEntry.Entity;
         }
 
         public bool DeleteProduct(ProductEntity product)
         {
             try {                
-                _context.products.Remove(product);
+                _context.Products.Remove(product);
                 return true;
             }
             catch
@@ -40,14 +40,14 @@ namespace JWTAuthentication.NET6._0.Repositories
 
         public List<ProductEntity> GetAll()
         {
-            return _context.products.ToList();
+            return _context.Products.ToList();
         }
 
         public PageResult<ProductDTO> GetAllPage(GetProductPagingRequest request)
         {
             // join
-            var query = from p in _context.products
-                        join c in _context.categories on p.CategoryId equals c.CategoryId
+            var query = from p in _context.Products
+                        join c in _context.Categories on p.CategoryId equals c.CategoryId
                         select new {p, c};
 
             // search
@@ -55,8 +55,11 @@ namespace JWTAuthentication.NET6._0.Repositories
                 query = query.Where(x => x.c.CategoryName.Contains(request.Keyword) || x.p.ProductName.Contains(request.Keyword));
 
             // filter
-            if(request.CategoryIds.Count > 0)
+            if(request.CategoryIds != null && request.CategoryIds.Count > 0)
                 query = query.Where(x => request.CategoryIds.Contains(x.p.CategoryId));
+
+            // order by ProductId in descending order
+            query = query.OrderByDescending(x => x.p.ProductId);
 
             // page
             int totalRow = query.Count();
@@ -78,6 +81,7 @@ namespace JWTAuthentication.NET6._0.Repositories
             {
                 TotalRecord = totalRow,
                 Items = data,
+                TotalPages = (int)Math.Ceiling((double)totalRow / request.PageSize)
             };
 
             return pageResult;
@@ -85,7 +89,7 @@ namespace JWTAuthentication.NET6._0.Repositories
 
         public ProductEntity? GetProductById(int productId)
         {
-            return _context.products.FirstOrDefault(p => p.ProductId == productId);
+            return _context.Products.FirstOrDefault(p => p.ProductId == productId);
         }
 
         public bool UpdateProduct(ProductEntity product)

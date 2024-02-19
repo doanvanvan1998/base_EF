@@ -4,5 +4,6 @@
     {
         public List<T> Items { get; set; }
         public int TotalRecord { get; set; }
+        public int TotalPages { get; set; }
     }
 }

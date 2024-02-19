@@ -18,17 +18,17 @@ namespace JWTAuthentication.NET6._0.Repositories
 
         public List<CategoryEntity> getAll()
         {
-            return _dataDB.categories.ToList();
+            return _dataDB.Categories.ToList();
         }
 
         public CategoryEntity? GetCategoryById(int id)
         {
-            return _dataDB.categories.FirstOrDefault(c => c.CategoryId == id);
+            return _dataDB.Categories.FirstOrDefault(c => c.CategoryId == id);
         }
 
         public CategoryEntity AddCategory(CategoryEntity category)
         {
-            EntityEntry<CategoryEntity> entityEntry = _dataDB.categories.Add(category);
+            EntityEntry<CategoryEntity> entityEntry = _dataDB.Categories.Add(category);
             return entityEntry.Entity;
         }
 
@@ -47,12 +47,12 @@ namespace JWTAuthentication.NET6._0.Repositories
 
         public void DeleteCategory(CategoryEntity category)
         {
-            _dataDB.categories.Remove(category);
+            _dataDB.Categories.Remove(category);
         }
 
         public List<ProductEntity> GetAllProductByCategoryId(int id)
         {
-            return _dataDB.products.Where(p => p.CategoryId == id).ToList();
+            return _dataDB.Products.Where(p => p.CategoryId == id).ToList();
         }
     }
 }
