@@ -29,7 +29,7 @@ namespace JWTAuthentication.NET6._0.Controllers
             return product != null ? Ok(product) : NotFound();
         }
 
-        [HttpPost("addProduct")]
+        [HttpPost]
         public IActionResult AddProduct([FromBody] ProductModel productModel)
         {
             if (!ModelState.IsValid)
@@ -70,7 +70,8 @@ namespace JWTAuthentication.NET6._0.Controllers
                 return new ObjectResult("delete product failed !") { StatusCode = StatusCodes.Status500InternalServerError };
         }
 
-        [HttpGet("getAllPage")]
+        [HttpGet]
+        [Route("getAllPage")]
         public IActionResult GetAllPage([FromQuery] GetProductPagingRequest request)
         {
             PageResult<ProductDTO> pageResult = _productService.GetAllPage(request);
