@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "bodcvKlgBkUwzr1EbAcvEoctKYMgpshzjyAf4GBj1MS1H34T2NwP63WIXk2V5CGIzTMxTkOBt5JjMfS2hwo18Q==",
+  "dgSpecHash": "s0QaW866BkWrMIHOSIDJ7cjQ9WS990bPBWfwB0N8R6ZVL5woXs65SgLgSw18/echGFV8hjCZ8/c+sbOZVNmJ5Q==",
   "success": true,
   "projectFilePath": "D:\\5.C#\\base_EF\\JWTAuthentication.NET6.0\\JWTAuthentication.NET6.0.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\PCM\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
+    "C:\\Users\\PCM\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\PCM\\.nuget\\packages\\closedxml\\0.101.0\\closedxml.0.101.0.nupkg.sha512",
     "C:\\Users\\PCM\\.nuget\\packages\\documentformat.openxml\\2.16.0\\documentformat.openxml.2.16.0.nupkg.sha512",
     "C:\\Users\\PCM\\.nuget\\packages\\excelnumberformat\\1.1.0\\excelnumberformat.1.1.0.nupkg.sha512",
