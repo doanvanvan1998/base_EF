@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace JWTAuthentication.NET6._0.Models.Models
+namespace JWTAuthentication.NET6._0.Models.Entities
 {
     public class ProductEntity
     {

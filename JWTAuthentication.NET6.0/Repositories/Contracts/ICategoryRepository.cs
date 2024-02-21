@@ -1,5 +1,5 @@
 ﻿using JWTAuthentication.NET6._0.Data;
-using JWTAuthentication.NET6._0.Models.Models;
+using JWTAuthentication.NET6._0.Models.Entities;
 
 namespace JWTAuthentication.NET6._0.Repositories.Contracts
 {

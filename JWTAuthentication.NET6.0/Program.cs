@@ -1,4 +1,5 @@
 using JWTAuthentication.NET6._0.Auth;
+using JWTAuthentication.NET6._0.Helpter;
 using JWTAuthentication.NET6._0.Mappers;
 using JWTAuthentication.NET6._0.Mappers.Contracts;
 using JWTAuthentication.NET6._0.Repositories;
@@ -15,6 +16,10 @@ var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 
 // Add services to the container.
+
+// For Email
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddTransient<IEmailService, EmailService>();
 
 // For Entity Framework
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("ConnStr")));
