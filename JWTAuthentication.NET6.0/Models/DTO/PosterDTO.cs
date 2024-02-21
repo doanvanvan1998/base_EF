@@ -2,8 +2,8 @@
 {
     public class PosterDTO
     {
-        /*public int PosterId { get; set; }*/
-        public string PosterName { get; set; }
+        public int PosterId123 { get; set; }
+        public string PosterName123 { get; set; }
         public string PosterDescription { get; set; }
     }
 }

@@ -11,7 +11,9 @@ namespace JWTAuthentication.NET6._0.Mappers
         public PosterProfile()
         {
             CreateMap<PosterRequest, PosterEntity>();
-            CreateMap<PosterEntity, PosterDTO>();
+            CreateMap<PosterEntity, PosterDTO>()
+                .ForMember(dest => dest.PosterId123, opt => opt.MapFrom(src => src.PosterId))
+                .ForMember(dest => dest.PosterName123, opt => opt.MapFrom(src => src.PosterName));
         }
     }
 }
