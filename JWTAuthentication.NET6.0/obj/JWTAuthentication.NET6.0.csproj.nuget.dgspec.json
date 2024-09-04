@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\5.C#\\base_EF\\JWTAuthentication.NET6.0\\JWTAuthentication.NET6.0.csproj": {}
+    "D:\\6.C#\\base_EF\\JWTAuthentication.NET6.0\\JWTAuthentication.NET6.0.csproj": {}
   },
   "projects": {
-    "D:\\5.C#\\base_EF\\JWTAuthentication.NET6.0\\JWTAuthentication.NET6.0.csproj": {
+    "D:\\6.C#\\base_EF\\JWTAuthentication.NET6.0\\JWTAuthentication.NET6.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\5.C#\\base_EF\\JWTAuthentication.NET6.0\\JWTAuthentication.NET6.0.csproj",
+        "projectUniqueName": "D:\\6.C#\\base_EF\\JWTAuthentication.NET6.0\\JWTAuthentication.NET6.0.csproj",
         "projectName": "JWTAuthentication.NET6.0",
-        "projectPath": "D:\\5.C#\\base_EF\\JWTAuthentication.NET6.0\\JWTAuthentication.NET6.0.csproj",
-        "packagesPath": "C:\\Users\\PCM\\.nuget\\packages\\",
-        "outputPath": "D:\\5.C#\\base_EF\\JWTAuthentication.NET6.0\\obj\\",
+        "projectPath": "D:\\6.C#\\base_EF\\JWTAuthentication.NET6.0\\JWTAuthentication.NET6.0.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "D:\\6.C#\\base_EF\\JWTAuthentication.NET6.0\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PCM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

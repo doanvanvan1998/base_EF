@@ -11540,19 +11540,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PCM\\.nuget\\packages\\": {}
+    "C:\\Users\\PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\5.C#\\base_EF\\JWTAuthentication.NET6.0\\JWTAuthentication.NET6.0.csproj",
+      "projectUniqueName": "D:\\6.C#\\base_EF\\JWTAuthentication.NET6.0\\JWTAuthentication.NET6.0.csproj",
       "projectName": "JWTAuthentication.NET6.0",
-      "projectPath": "D:\\5.C#\\base_EF\\JWTAuthentication.NET6.0\\JWTAuthentication.NET6.0.csproj",
-      "packagesPath": "C:\\Users\\PCM\\.nuget\\packages\\",
-      "outputPath": "D:\\5.C#\\base_EF\\JWTAuthentication.NET6.0\\obj\\",
+      "projectPath": "D:\\6.C#\\base_EF\\JWTAuthentication.NET6.0\\JWTAuthentication.NET6.0.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "D:\\6.C#\\base_EF\\JWTAuthentication.NET6.0\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\PCM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11653,5 +11653,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MimeKit' 3.6.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-gmc6-fwg3-75m5",
+      "libraryId": "MimeKit",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
